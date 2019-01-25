@@ -17,4 +17,5 @@ file="/etc/nginx/sites-available/default"
 
 sudo sed -i '/^\tserver_name localhost;/a\\n\tlocation /hbnb_static/ {\n\talias /data/web_static/current/;}\n' $file
 
+sudo service nginx reload
 sudo service nginx restart
