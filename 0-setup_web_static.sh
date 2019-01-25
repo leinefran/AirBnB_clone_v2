@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # a Bash script that sets up your web servers for the deployment of web_static
 
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y install nginx
 sudo apt-get -y install emacs
 
 sudo mkdir -p /data/web_static/releases/test /data/web_static/shared
-sudo echo "I AM A FAKE HTML DOC" > /data/web_static/releases/test/index.html
+echo "I AM A FAKE HTML DOC" > /data/web_static/releases/test/index.html
 
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 
