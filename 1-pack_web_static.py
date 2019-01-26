@@ -4,7 +4,7 @@
 from fabric.api import *
 from datetime import datetime
 
-
+@task
 def do_pack():
     '''a Fabric script that generates a .tgz archive'''
     local("mkdir -p ./versions")
