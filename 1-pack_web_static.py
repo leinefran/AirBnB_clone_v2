@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
-# a Fabric script that generates a .tgz archive
+'''Module Compress File'''
 
 from fabric.api import *
 from datetime import datetime
 
+
 def do_pack():
+    '''a Fabric script that generates a .tgz archive'''
     local("mkdir -p ./versions")
 
     try:
