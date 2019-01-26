@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/python3
 '''Module Compress File'''
 
 from fabric.api import *
