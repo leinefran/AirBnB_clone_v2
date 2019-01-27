@@ -13,7 +13,7 @@ env.password = "betty"
 @task
 def do_deploy(archive_path):
     '''a Fabric script that distributes an archive to your web servers'''
-    if (!archive_path):
+    if not archive_path:
         return (False)
 
     try:
