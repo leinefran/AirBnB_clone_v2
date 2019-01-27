@@ -4,7 +4,7 @@
 from fabric.api import *
 from datetime import datetime
 
-
+env.key_filename = "~/.ssh/holberton"
 env.hosts = ['35.190.162.122', '35.237.116.99']
 env.user = 'ubuntu'
 env.password = "betty"
