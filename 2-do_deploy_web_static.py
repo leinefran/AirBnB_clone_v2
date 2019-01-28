@@ -17,10 +17,8 @@ def do_deploy(archive_path):
         return (False)
 
     try:
-
         # upload tar archive:
-        with cd("/tmp"):
-            upload = put(archive_path)
+        upload = put(archive_path, "/tmp/")
 
         # Verify the upload:
         upload.succeeded
@@ -42,7 +40,9 @@ def do_deploy(archive_path):
         file_path = "/data/web_static/releases/web_static_20190127003308"
         run("ln -sf" + file_path + "/data/web_static/current")
 
+        print("It worked!")
         return (True)
 
     except:
+        print("Fail")
         return (False)
