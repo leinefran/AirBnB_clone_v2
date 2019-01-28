@@ -20,8 +20,7 @@ def do_deploy(archive_path):
 
         # upload tar archive:
         with cd("/tmp"):
-            upload = put("/home/vagrant/Holberton/AirBnB_clone_v2/versions/" +
-                         "web_static_20190127003308.tgz")
+            upload = put(archive_path)
 
         # Verify the upload:
         upload.succeeded
