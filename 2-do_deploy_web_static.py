@@ -39,21 +39,30 @@ def do_deploy(archive_path):
         # Verify the upload:
         upload.succeeded
 
-        # Extract the contents of a tar archive:
-        content = run("tar xzvf" + filename + ".tgz")
+        print("Upload worked")
 
-        # Move contents to a different folder:
-        cd("/tmp/")
-        file_path = run("mv " + content + " /data/web_static/releases/"
+        # Extract the contents of a tar archive
+        # Move archive to a new directory
+        filepath = "/data/web_static/releases/" + filename
+        run("tar xzvf" + filename + ".tgz -C " + filepath)
+
+        print("Content Uncompressed")
 
         # Delete the archive:
-        run("rm -rf /tmp/" + filename + ".tgz")
+        command = "rm /tmp/" + filename + ".tgz"
+        run(command)
+
+        print("Archive Deleted")
 
         # Delete a symbolic link:
         run("rm -rf /data/web_static/current")
 
+        print("Symbolic link deleted")
+
         # Create a new symbolic link:
-        run("ln -sf " + file_path + " /data/web_static/current")
+        run("ln -sf " + filepath + " /data/web_static/current")
+
+        print("New symbolic link created")
 
         print("It worked!")
         return (True)
