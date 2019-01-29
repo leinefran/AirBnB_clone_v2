@@ -9,6 +9,7 @@ env.hosts = ['35.190.162.122', '35.237.116.99']
 env.user = 'ubuntu'
 env.password = "betty"
 
+
 @task
 def do_pack():
     '''a Fabric script that generates a .tgz archive'''
@@ -21,6 +22,7 @@ def do_pack():
         return(result)
     except:
         return(None)
+
 
 @task
 def do_deploy(archive_path):
