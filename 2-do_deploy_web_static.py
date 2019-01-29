@@ -30,11 +30,13 @@ def do_deploy(archive_path):
 
     # using the 'split' method to extract only the file name w/o the extension;
     # 'web_static_20170315003959'
-    filename = archive_path.split("/")[1][:-4]
+    filename = archive_path.split("/")[-1][:-4]
 
     try:
+        print("START!")
         # upload tar archive:
         upload = put(archive_path, "/tmp/")
+        print(upload)
 
         # Verify the upload:
         upload.succeeded
@@ -43,8 +45,8 @@ def do_deploy(archive_path):
 
         # Extract the contents of a tar archive
         # Move archive to a new directory
-        filepath = "/data/web_static/releases/" + filename
-        run("tar xzvf" + filename + ".tgz -C " + filepath)
+        filepath = "/data/web_static/releases/"
+        run("tar -xzf " + "/tmp/" + filename + ".tgz -C " + filepath)
 
         print("Content Uncompressed")
 
@@ -67,6 +69,6 @@ def do_deploy(archive_path):
         print("It worked!")
         return (True)
 
-    except:
-        print("Fail")
+    except Exception as ex:
+        print(ex)
         return (False)
