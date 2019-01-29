@@ -64,7 +64,7 @@ def do_deploy(archive_path):
         print("Symbolic link deleted")
 
         # Create a new symbolic link:
-        run("ln -sf " + filepath + " /data/web_static/current")
+        run("ln -sf " + filepath + filename + " /data/web_static/current")
 
         print("New symbolic link created")
 
