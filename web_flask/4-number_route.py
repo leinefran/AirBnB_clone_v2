@@ -36,7 +36,7 @@ def python(text="is cool"):
 def number():
     ''' return a number '''
     if (isinstance(n, int)):
-        return '{} is a number'.format(n)'
+        return 'n is a number'
 
 if __name__ == '__main__':
 
