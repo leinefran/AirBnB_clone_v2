@@ -7,7 +7,8 @@ from flask import Flask
 
 web_app = Flask(__name__)
 
-@web_app.route('/', strict_slashes = False)
+
+@web_app.route('/', strict_slashes=False)
 def hello():
     ''' return welcoming str '''
     return 'Hello, HBNB!'
