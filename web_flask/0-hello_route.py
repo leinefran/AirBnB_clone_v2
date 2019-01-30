@@ -15,5 +15,5 @@ def hello():
 
 if __name__ == '__main__':
 
-    app.env = 'development'
+    web_app.env = 'development'
     web_app.run(host='0.0.0.0', port=5000)
