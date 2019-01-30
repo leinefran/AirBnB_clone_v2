@@ -32,7 +32,7 @@ def python(text="is cool"):
     return 'C {}'.format(text).replace('_', ' ')
 
 
-@app.route('/number/<n>', strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def number():
     ''' return "n is a number" '''
     if (isinstance(n, int)):
