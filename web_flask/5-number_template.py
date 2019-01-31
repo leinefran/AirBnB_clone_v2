@@ -43,7 +43,7 @@ def number():
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def n_template():
     if (isinstance(n, int)):
-        return 'n is a number'
+        return 'templates/5-number.html'
     return
 
 if __name__ == '__main__':
