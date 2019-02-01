@@ -1,20 +1,19 @@
 #!/usr/bin/python3
 ''' Flask Module'''
-
-
 from flask import Flask
 
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
-@app.route('/', strict_slashes=False)
+@app.route('/')
 def hello():
     ''' return welcoming str '''
-    return 'Hello, HBNB!'
+    return 'Hello HBNB!'
 
 
-@app.route('/hbnb', strict_slashes=False)
+@app.route('/hbnb')
 def display():
     ''' returns HBNB '''
     return 'HBNB'
@@ -22,5 +21,4 @@ def display():
 
 if __name__ == '__main__':
 
-    app.env = 'development'
     app.run(host='0.0.0.0', port=5000)
