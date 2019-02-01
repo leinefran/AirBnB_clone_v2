@@ -95,3 +95,9 @@ class DBStorage:
         if obj is None:
             cls = type(obj)
             self.__session.query(cls).filter(id=obj.id).delete()
+
+    def close(self):
+        """ a method for deserializing the JSON file to objects
+        """
+        if self.__session:
+            self.__session.remove()
